@@ -19,14 +19,14 @@ Role Variables
 required:
 - `env_file_path`: the shell script to export "path" to $PATH
 - `pkg:`
-  `name`: package name, it will be used for naming directory in folder "/opt"
-  `url`: the url of archive package
-  `bin_path_in_pkg`: the "/bin" path in package archive
-  `archive_name`: the download archive name to save
-  `type`: the type of the package to install, choose in ["yum", "archive"]
+  - `name`: package name, it will be used for naming directory in folder "/opt"
+  - `url`: the url of archive package
+  - `bin_path_in_pkg`: the "/bin" path in package archive
+  - `archive_name`: the download archive name to save
+  - `type`: the type of the package to install, choose in ["yum", "archive"]
 - `pkg:`
-  `type`: the type of the package to install, choose in ["yum", "archive"]
-  `name:` a list of package name in the yum repos to install
+  - `type`: the type of the package to install, choose in ["yum", "archive"]
+  - `name:` a list of package name in the yum repos to install
 
 optional:
 - `installation_group`: the group of installation directory, "root" as default
