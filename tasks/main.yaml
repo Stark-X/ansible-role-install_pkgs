@@ -1,0 +1,17 @@
+---
+- name: install necessary tool
+  yum:
+    name: unzip
+- name: "install {{ pkg.name }} by downloading the archive"
+  include_tasks: install_pkg_archive.yaml
+  vars:
+    name: "{{ pkg.name }}"
+    url: "{{ pkg.url }}"
+    bin_path_in_pkg: "{{ pkg.bin_path_in_pkg }}"
+    archive_name: "{{ pkg.archive_name }}"
+  when: pkg.type == "archive"
+- name: "install {{ pkg.name }} using yum"
+  include_tasks: install_pkg_yum.yaml
+  vars:
+    name: "{{ pkg.name | list }}"
+  when: pkg.type == "yum"

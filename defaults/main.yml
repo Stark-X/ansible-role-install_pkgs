@@ -1,0 +1,4 @@
+---
+# defaults file for dependency-check
+installation_group: root
+installation_owner: root

@@ -1,0 +1,4 @@
+---
+- name: "install {{ name }} using yum"
+  yum:
+    name: "{{ name }}"

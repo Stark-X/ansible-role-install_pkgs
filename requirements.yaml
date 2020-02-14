@@ -1,0 +1,3 @@
+- src: https://github.com/Stark-X/ansible-role-add_to_path.git
+  version: "1.0"
+  name: add_to_path

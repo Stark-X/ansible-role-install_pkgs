@@ -1,0 +1,21 @@
+---
+- name: fetch pkg archive {{ name }} from url
+  get_url:
+    url: "{{ url }}"
+    dest: "/tmp/{{ archive_name }}"
+- name: ensure installation folder exists
+  file:
+    path: "/opt/{{ name }}"
+    state: directory
+    owner: "{{ installation_owner }}"
+    group: "{{ installation_group }}"
+- name: "extract pkg {{ name }}"
+  unarchive:
+    src: "/tmp/{{ archive_name }}"
+    dest: "/opt/{{ name }}"
+    remote_src: true
+- name: "add {{ name }} bin to PATH"
+  include_role:
+    name: add_to_path
+  vars:
+    extra_path: "/opt/{{ name }}/{{ bin_path_in_pkg }}"
