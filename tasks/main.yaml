@@ -2,6 +2,12 @@
 - name: install necessary tool
   yum:
     name: unzip
+- name: ensure var "pkg" exists
+  include_role:
+    name: mandatory
+  vars:
+    required_vars:
+      - pkg
 - name: "install {{ pkg.name }} by downloading the archive"
   include_tasks: install_pkg_archive.yaml
   vars:

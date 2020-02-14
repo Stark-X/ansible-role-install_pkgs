@@ -17,7 +17,6 @@ Role Variables
 --------------
 
 required:
-- `env_file_path`: the shell script to export "path" to $PATH
 - `pkg:`
   - `name`: package name, it will be used for naming directory in folder "/opt"
   - `url`: the url of archive package
@@ -31,6 +30,7 @@ required:
 optional:
 - `installation_group`: the group of installation directory, "root" as default
 - `installation_owner`: the owner of installation directory, "root" as default
+- `env_file_path`: the shell script to export "path" to $PATH, "/etc/profile.d/ansible_added_path.sh"
 
 Dependencies
 ------------
